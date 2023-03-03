@@ -51,8 +51,8 @@ const App: React.FC = () => {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
-              {/* <Home /> */}
-              <Dashboard />
+              <Home />
+              {/* <Dashboard /> */}
             </Route>
             <Route path="/farm">
               <Farm />
@@ -68,6 +68,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/supply">
               <Supply />
+            </Route>
+            <Route path="/Dashboard">
+              <Dashboard />
             </Route>
             {/* <Route path="/sbs">
               <SBS />

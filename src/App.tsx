@@ -51,8 +51,8 @@ const App: React.FC = () => {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
-              <Home />
-              {/* <Dashboard /> */}
+              {/* <Home /> */}
+              <Dashboard />
             </Route>
             <Route path="/farm">
               <Farm />

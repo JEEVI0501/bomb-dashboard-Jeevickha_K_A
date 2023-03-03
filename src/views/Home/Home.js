@@ -443,7 +443,7 @@ const Home = () => {
               10,000 BBOND
               <Box>
                 <span style={{ fontSize: '30px', color: 'white' }}>
-                  {tBondPriceInBNB ? tBondPriceInBNB : '-.----'} BTC
+                  {roundAndFormatNumber(tBondTotalSupply, 2)} BTC
                 </span>
               </Box>
               <Box>

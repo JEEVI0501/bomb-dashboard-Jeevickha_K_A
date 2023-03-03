@@ -26,6 +26,9 @@ import { Box, CardContent, Typography, Grid, Paper} from '@material-ui/core';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import { roundAndFormatNumber } from '../../0x';
 import moment from 'moment';
+import useRedeem from '../../hooks/useRedeem';
+import useBank from '../../hooks/useBank';
+import {useParams} from 'react-router-dom';
 import { Alert } from '@material-ui/lab';
 
 
@@ -43,6 +46,9 @@ const TITLE = 'bomb.money | Dashboard';
 //     }
 // ]
 const Dashboard = () => {
+    const {bankId} = useParams();
+    const bank = useBank(bankId);
+    const { onRedeem } = useRedeem(bank);
     const TVL = useTotalValueLocked();
     const bombStats = useBombStats();
     const bShareStats = usebShareStats();
@@ -364,7 +370,9 @@ const Dashboard = () => {
                             <p>Redeem Bomb</p>
                         </Grid>
                         <Grid>
-                            <Button>Redeem</Button>
+                            <Button onClick={onRedeem} className="shinyButtonSecondary">
+              Redeem
+            </Button>
                         </Grid>
                     </Grid>
                 </Grid>
